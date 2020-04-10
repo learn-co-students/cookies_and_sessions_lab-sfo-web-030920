@@ -1,0 +1,14 @@
+<h1>Product Index</h1>
+<h4>Your cart has <%= cart.count %> items</h4>
+
+<h5>Cart items</h5>
+<ul>
+  <% cart.each do |item| %>
+    <li><%= item %></li>
+  <% end %>
+</ul>
+
+<%= form_tag products_add_path do %>
+  <%= text_field_tag :product %>
+  <%= submit_tag "add to cart" %>
+<% end %>
